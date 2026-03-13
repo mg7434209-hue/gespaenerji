@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gespa Enerji — Güneş Enerji Sistemleri & Pazarlama | Manavgat, Antalya</title>
+<meta name="description" content="2005'ten beri Antalya ve Manavgat'ta anahtar teslim güneş enerji sistemleri. Villa, tarımsal sulama, fabrika, otel, tekne. Ücretsiz keşif ve hesaplama.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+/* ── HERO ── */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 140px 60px 80px; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 75% 40%, rgba(232,160,32,0.12) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 20% 70%, rgba(232,160,32,0.06) 0%, transparent 50%), linear-gradient(160deg, #0a0e1a 0%, #0d1525 50%, #0a0e1a 100%); }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(232,160,32,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(232,160,32,0.04) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 70% at 70% 40%, black, transparent); }
+.hero-sun { position: absolute; right: 8%; top: 50%; transform: translateY(-50%); width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(232,160,32,0.18) 0%, rgba(232,160,32,0.06) 40%, transparent 70%); animation: hpulse 4s ease-in-out infinite; }
+.hero-sun::before { content: ''; position: absolute; inset: 50px; border-radius: 50%; border: 1px solid rgba(232,160,32,0.2); animation: hrotate 20s linear infinite; }
+.hero-sun::after { content: ''; position: absolute; inset: 90px; border-radius: 50%; background: radial-gradient(circle, rgba(232,160,32,0.25) 0%, transparent 70%); }
+@keyframes hpulse { 0%,100%{transform:translateY(-50%) scale(1)} 50%{transform:translateY(-50%) scale(1.05)} }
+@keyframes hrotate { to{transform:rotate(360deg)} }
+.hero-content { position: relative; max-width: 680px; }
+.hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(232,160,32,0.12); border: 0.5px solid rgba(232,160,32,0.3); color: var(--gold2); padding: 6px 16px; border-radius: 30px; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 28px; animation: fadeUp 0.8s ease forwards; }
+.hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: blink 2s ease infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(44px,5.5vw,72px); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 24px; animation: fadeUp 0.8s 0.1s ease both; }
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-sub { font-size: 17px; color: var(--muted); font-weight: 300; line-height: 1.7; max-width: 520px; margin-bottom: 44px; animation: fadeUp 0.8s 0.2s ease both; }
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeUp 0.8s 0.3s ease both; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+.hero-stats { position: relative; margin-top: 72px; display: flex; gap: 48px; flex-wrap: wrap; padding-top: 40px; border-top: 0.5px solid var(--border); animation: fadeUp 0.8s 0.4s ease both; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 600; color: var(--gold2); line-height: 1; }
+.stat-label { font-size: 13px; color: var(--muted); margin-top: 6px; font-weight: 300; }
+
+/* ── SEKTÖRLER ── */
+.sectors { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 0.5px solid var(--border); }
+.sector-card { background: var(--dark2); padding: 36px 32px; transition: background 0.3s; cursor: pointer; position: relative; overflow: hidden; text-decoration: none; color: inherit; display: block; }
+.sector-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+.sector-card:hover { background: var(--dark3); }
+.sector-card:hover::after { transform: scaleX(1); }
+.sector-icon { font-size: 30px; margin-bottom: 18px; display: block; }
+.sector-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.01em; }
+.sector-card p { font-size: 14px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+.sector-link { display: inline-flex; align-items: center; gap: 6px; color: var(--gold); font-size: 13px; font-weight: 500; margin-top: 18px; letter-spacing: 0.02em; }
+
+/* ── ANAHTAR TESLİM ── */
+.process-section { background: var(--dark2); }
+.process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.feature-box { background: var(--dark3); border: 0.5px solid var(--border); border-radius: 8px; padding: 40px 36px; }
+.feature-box h3 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; margin-bottom: 24px; }
+.feature-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.feature-list li { display: flex; gap: 14px; font-size: 14px; color: var(--muted); line-height: 1.6; font-weight: 300; }
+.feature-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px; }
+.gold-box { margin-top: 28px; padding: 18px 20px; background: rgba(232,160,32,0.08); border: 0.5px solid rgba(232,160,32,0.2); border-radius: 6px; font-size: 13px; color: var(--gold2); line-height: 1.6; }
+.gold-box strong { color: var(--gold); font-weight: 500; }
+
+/* ── PROJELERs ── */
+.projects-mosaic { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 260px 260px; gap: 10px; }
+.proj { border-radius: 6px; overflow: hidden; position: relative; display: flex; align-items: flex-end; padding: 22px; border: 0.5px solid var(--border); background: var(--dark3); transition: border-color 0.3s; text-decoration: none; color: inherit; }
+.proj:hover { border-color: var(--border2); }
+.proj.span2 { grid-row: span 2; }
+.proj-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.35; transition: opacity 0.4s; }
+.proj:hover .proj-bg { opacity: 0.5; }
+.proj-content { position: relative; }
+.proj-tag { display: inline-block; background: rgba(232,160,32,0.15); color: var(--gold2); border: 0.5px solid rgba(232,160,32,0.3); padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 500; margin-bottom: 8px; }
+.proj h4 { font-size: 16px; font-weight: 500; margin-bottom: 6px; line-height: 1.3; }
+.proj-meta { font-size: 12px; color: var(--muted); font-weight: 300; }
+.proj-meta strong { color: var(--gold2); }
+
+/* ── HESAPLAMA ── */
+.calc-section { background: var(--dark2); }
+.calc-tabs { display: flex; gap: 0; border-bottom: 0.5px solid var(--border); margin-bottom: 40px; }
+.calc-tab { padding: 12px 24px; font-size: 14px; color: var(--muted); cursor: pointer; border: none; border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; font-family: 'DM Sans',sans-serif; transition: all 0.2s; }
+.calc-tab.active { color: var(--gold); border-bottom-color: var(--gold); font-weight: 500; }
+.calc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.calc-form { display: flex; flex-direction: column; gap: 18px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+label { font-size: 13px; color: var(--muted); letter-spacing: 0.02em; }
+input[type=number], select { background: var(--dark3); border: 0.5px solid var(--border); color: var(--white); padding: 12px 16px; border-radius: 4px; font-size: 15px; font-family: 'DM Sans',sans-serif; outline: none; transition: border-color 0.2s; -webkit-appearance: none; width: 100%; }
+input:focus, select:focus { border-color: rgba(232,160,32,0.5); }
+select option { background: var(--dark2); }
+.calc-btn { background: var(--gold); color: var(--dark); border: none; padding: 14px; border-radius: 4px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: 'DM Sans',sans-serif; letter-spacing: 0.03em; transition: background 0.2s; margin-top: 4px; width: 100%; }
+.calc-btn:hover { background: var(--gold2); }
+.result-box { background: var(--dark3); border: 0.5px solid var(--border); border-radius: 8px; padding: 36px 32px; min-height: 300px; display: flex; flex-direction: column; justify-content: center; }
+.result-empty { text-align: center; }
+.result-empty .sun { font-size: 48px; opacity: 0.25; margin-bottom: 14px; }
+.result-empty p { color: var(--muted); font-size: 14px; font-weight: 300; }
+.result-title { font-family: 'Playfair Display',serif; font-size: 18px; font-weight: 600; margin-bottom: 24px; color: var(--muted); }
+.result-items { display: flex; flex-direction: column; gap: 0; }
+.result-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 0.5px solid var(--border); }
+.result-row:last-child { border-bottom: none; }
+.result-label { font-size: 14px; color: var(--muted); font-weight: 300; }
+.result-val { font-family: 'Playfair Display',serif; font-size: 20px; font-weight: 600; color: var(--gold2); }
+.result-note { font-size: 12px; color: var(--muted); font-weight: 300; margin-top: 20px; line-height: 1.6; }
+
+/* ── YORUMLAR ── */
+.reviews-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.review-card { background: var(--dark2); border: 0.5px solid var(--border); border-radius: 8px; padding: 28px 24px; transition: border-color 0.3s; }
+.review-card:hover { border-color: var(--border2); }
+.stars { color: var(--gold); font-size: 13px; margin-bottom: 14px; letter-spacing: 2px; }
+.review-text { font-size: 14px; color: var(--muted); line-height: 1.8; font-weight: 300; font-style: italic; margin-bottom: 18px; }
+.reviewer { display: flex; align-items: center; gap: 12px; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: rgba(232,160,32,0.12); border: 0.5px solid var(--border2); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display',serif; font-size: 15px; color: var(--gold2); flex-shrink: 0; }
+.reviewer-name { font-size: 14px; font-weight: 500; }
+.reviewer-loc { font-size: 12px; color: var(--muted); font-weight: 300; margin-top: 2px; }
+
+/* ── CTA ── */
+.cta-section { text-align: center; border-top: 0.5px solid var(--border); background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(232,160,32,0.08) 0%, transparent 70%); }
+.cta-section p { color: var(--muted); font-size: 16px; max-width: 480px; margin: 0 auto 44px; font-weight: 300; line-height: 1.7; }
+.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.contact-strip { display: flex; gap: 48px; justify-content: center; margin-top: 64px; padding-top: 48px; border-top: 0.5px solid var(--border); flex-wrap: wrap; }
+.contact-item-label { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+.contact-item-val { font-size: 16px; font-weight: 400; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero { padding: 120px 24px 60px; }
+  .hero-sun { display: none; }
+  .hero-stats { gap: 28px; }
+  .sectors { grid-template-columns: repeat(2,1fr); }
+  .process-grid { grid-template-columns: 1fr; gap: 40px; }
+  .projects-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .proj.span2 { grid-row: auto; grid-column: span 2; }
+  .calc-layout { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .sectors { grid-template-columns: 1fr; }
+  .projects-mosaic { grid-template-columns: 1fr; }
+  .proj.span2 { grid-column: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="/" class="logo">Gespa <span>Enerji</span></a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="#">Hizmetler ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="/hizmetler/villa">🏡 Villa & Konut</a>
+        <a href="/hizmetler/tarimsal">🌾 Tarımsal Sulama</a>
+        <a href="/hizmetler/fabrika">🏭 Fabrika & Endüstri</a>
+        <a href="/hizmetler/otel">🏨 Otel & Turizm</a>
+        <a href="/hizmetler/tekne">⛵ Tekne & Marine</a>
+        <a href="/hizmetler/ticari">🏗️ Ticari & Diğer</a>
+      </div>
+    </li>
+    <li><a href="/projeler">Projeler</a></li>
+    <li><a href="/hesaplama">Hesaplama</a></li>
+    <li><a href="/hakkimizda">Hakkımızda</a></li>
+    <li><a href="/iletisim">İletişim</a></li>
+  </ul>
+  <a href="tel:+905437434209" class="nav-cta">Teklif Al</a>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/hizmetler/villa">🏡 Villa & Konut</a>
+  <a href="/hizmetler/tarimsal">🌾 Tarımsal Sulama</a>
+  <a href="/hizmetler/fabrika">🏭 Fabrika & Endüstri</a>
+  <a href="/hizmetler/otel">🏨 Otel & Turizm</a>
+  <a href="/hizmetler/tekne">⛵ Tekne & Marine</a>
+  <a href="/projeler">Projeler</a>
+  <a href="/hesaplama">Hesaplama</a>
+  <a href="/hakkimizda">Hakkımızda</a>
+  <a href="/iletisim">İletişim</a>
+  <a href="tel:+905437434209" class="highlight">📞 0543 743 42 09</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-sun"></div>
+  <div class="hero-content">
+    <div class="hero-tag">2005'den beri · Manavgat, Antalya</div>
+    <h1>Güneşin gücüyle<br><em>özgür</em> enerji</h1>
+    <p class="hero-sub">Villa, çiftlik, tekne, fabrika, otel — her ihtiyaca özel anahtar teslim güneş enerji sistemleri. 20 yıllık tecrübe, yüzlerce sorunsuz kurulum.</p>
+    <div class="hero-btns">
+      <a href="/hesaplama" class="btn-gold">Ücretsiz Hesapla</a>
+      <a href="https://wa.me/905437434209?text=Merhaba%2C%20güneş%20sistemi%20hakkında%20bilgi%20almak%20istiyorum." class="btn-outline">WhatsApp'tan Yaz</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">20+</div><div class="stat-label">Yıllık tecrübe</div></div>
+      <div><div class="stat-num">500+</div><div class="stat-label">Tamamlanan proje</div></div>
+      <div><div class="stat-num">3 MW+</div><div class="stat-label">Toplam kurulu kapasite</div></div>
+      <div><div class="stat-num">%100</div><div class="stat-label">Anahtar teslim</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEKTÖRLER -->
+<section id="hizmetler">
+  <div class="section-tag">Hizmetlerimiz</div>
+  <h2>Her alana, her bütçeye<br>özel çözümler</h2>
+  <p class="section-sub">Konuttan endüstriyele, tekneden seraya kadar tüm alanlarda tasarım, tedarik, kurulum ve bakım hizmetleri sunuyoruz.</p>
+  <div class="sectors">
+    <a href="/hizmetler/villa" class="sector-card reveal">
+      <span class="sector-icon">🏡</span>
+      <h3>Villa & Konut</h3>
+      <p>Çatı üzeri, balkon ve pergola sistemleri. On-grid ve off-grid seçenekleriyle elektrik faturanızı sıfırlayın.</p>
+      <div class="sector-link">Detaylı bilgi →</div>
+    </a>
+    <a href="/hizmetler/tarimsal" class="sector-card reveal">
+      <span class="sector-icon">🌾</span>
+      <h3>Tarımsal Sulama</h3>
+      <p>Pompa sürücülü güneş sistemleri. Sera, bahçe ve tarla uygulamaları. Şebeke bağımsız, yakıtsız sulama.</p>
+      <div class="sector-link">Detaylı bilgi →</div>
+    </a>
+    <a href="/hizmetler/fabrika" class="sector-card reveal">
+      <span class="sector-icon">🏭</span>
+      <h3>Fabrika & Endüstri</h3>
+      <p>Yüksek kapasiteli on-grid sistemler. EPİAŞ'a satış imkânı. Yatırım geri dönüş analizi ile tam çözüm.</p>
+      <div class="sector-link">Detaylı bilgi →</div>
+    </a>
+    <a href="/hizmetler/otel" class="sector-card reveal">
+      <span class="sector-icon">🏨</span>
+      <h3>Otel & Turizm</h3>
+      <p>Enerji yönetimi, havuz ve ısıtma entegrasyonu. Yeşil belge desteği. Sürdürülebilir tesis yönetimi.</p>
+      <div class="sector-link">Detaylı bilgi →</div>
+    </a>
+    <a href="/hizmetler/tekne" class="sector-card reveal">
+      <span class="sector-icon">⛵</span>
+      <h3>Tekne & Marine</h3>
+      <p>Esnek ve sert panel seçenekleri. 12/24V akü sistemleri. Tuz suyu ortamına uygun montaj garantisi.</p>
+      <div class="sector-link">Detaylı bilgi →</div>
+    </a>
+    <a href="/hizmetler/ticari" class="sector-card reveal">
+      <span class="sector-icon">🏗️</span>
+      <h3>Ticari & Diğer</h3>
+      <p>AVM, rezidans, sanayi sitesi, park alanı uygulamaları. Büyük alan yönetimi ve ortak tüketim sistemleri.</p>
+      <div class="sector-link">Detaylı bilgi →</div>
+    </a>
+  </div>
+</section>
+
+<!-- ANAHTAR TESLİM -->
+<section class="process-section" id="surec">
+  <div class="process-grid">
+    <div>
+      <div class="section-tag">Anahtar Teslim Hizmet</div>
+      <h2>Siz sadece anahtar<br>teslim alın</h2>
+      <p class="section-sub" style="margin-bottom:0">İzin alma sürecinden devreye almaya kadar tüm aşamaları biz yönetiyoruz.</p>
+      <div class="steps" style="margin-top:44px;">
+        <div class="step reveal"><div class="step-num">01</div><div><h4>Ücretsiz Keşif & Analiz</h4><p>Çatı ölçümü, gölge analizi ve tüketim verisi incelemesi. Hiçbir ücret ödemeden yerinde keşif.</p></div></div>
+        <div class="step reveal"><div class="step-num">02</div><div><h4>Sistem Tasarımı</h4><p>İhtiyaca özel panel yerleşimi, inverter seçimi, bağlantı şeması ve detaylı proje raporu.</p></div></div>
+        <div class="step reveal"><div class="step-num">03</div><div><h4>İzin & Bürokratik İşlemler</h4><p>Belediye, EPDK ve TEDAŞ başvuruları. Tüm evrak takibi bizden — siz hiçbir şeyle uğraşmazsınız.</p></div></div>
+        <div class="step reveal"><div class="step-num">04</div><div><h4>Kurulum & Devreye Alma</h4><p>Deneyimli ekip, sertifikalı malzeme, sigortalı montaj. Sistemi çalışır halde teslim ediyoruz.</p></div></div>
+        <div class="step reveal"><div class="step-num">05</div><div><h4>Bakım & Destek</h4><p>Uzaktan izleme, periyodik bakım ve garanti kapsamında teknik destek. Her zaman yanınızdayız.</p></div></div>
+      </div>
+    </div>
+    <div class="feature-box reveal">
+      <h3>Neden Gespa Enerji?</h3>
+      <ul class="feature-list">
+        <li>2005'ten bu yana Antalya ve Manavgat'ta faaliyet — bölgeyi tanıyan yerel uzman ekip</li>
+        <li>Tüm izin ve bürokratik işlemleri müşteri adına takip ediyoruz</li>
+        <li>Yalnızca yetkili, garantili ve sertifikalı marka ürünler kullanıyoruz</li>
+        <li>Her sistem için özel performans raporu ve üretim simülasyonu sunuyoruz</li>
+        <li>Tarımsal sulama sistemlerinde özel uzmanlık — pompa sürücülü çözümler</li>
+        <li>Kurulum sonrası uzaktan izleme ve yıllık periyodik bakım hizmeti</li>
+        <li>Tüm işlemler sigortalı, garantili ve yazılı sözleşmeli</li>
+      </ul>
+      <div class="gold-box"><strong>25 yıl panel performans garantisi</strong> — Kurduğumuz sistemler, sizi ve bir sonraki nesli besleyecek kadar uzun ömürlüdür.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJELER -->
+<section id="projeler">
+  <div class="section-tag">Tamamlanan Projeler</div>
+  <h2>Yaptığımız işler<br>konuşsun</h2>
+  <p class="section-sub">Manavgat ve Antalya bölgesinde tamamlanan seçili projelerimizden örnekler.</p>
+  <div class="projects-mosaic">
+    <a href="/projeler" class="proj span2 reveal">
+      <div class="proj-bg" style="background-image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=900&q=70')"></div>
+      <div class="proj-content"><div class="proj-tag">Fabrika</div><h4>Manavgat Tekstil Fabrikası</h4><div class="proj-meta"><strong>500 kWp</strong> · 720.000 kWh/yıl · Manavgat, 2024</div></div>
+    </a>
+    <a href="/projeler" class="proj reveal">
+      <div class="proj-bg" style="background-image:url('https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=600&q=70')"></div>
+      <div class="proj-content"><div class="proj-tag">Villa</div><h4>Side Villası Çatı Sistemi</h4><div class="proj-meta"><strong>15 kWp</strong> · 2024</div></div>
+    </a>
+    <a href="/projeler" class="proj reveal">
+      <div class="proj-bg" style="background-image:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=70')"></div>
+      <div class="proj-content"><div class="proj-tag">Tarımsal</div><h4>Serik Sera Sulama Sistemi</h4><div class="proj-meta"><strong>30 kWp</strong> · 2023</div></div>
+    </a>
+    <a href="/projeler" class="proj reveal">
+      <div class="proj-bg" style="background-image:url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=70')"></div>
+      <div class="proj-content"><div class="proj-tag">Otel</div><h4>Belek Resort Otel</h4><div class="proj-meta"><strong>200 kWp</strong> · Belek, 2023</div></div>
+    </a>
+    <a href="/projeler" class="proj reveal">
+      <div class="proj-bg" style="background-image:url('https://images.unsplash.com/photo-1595437193398-f24279553f4f?w=600&q=70')"></div>
+      <div class="proj-content"><div class="proj-tag">Tekne</div><h4>Gulet — Marmaris Off-grid</h4><div class="proj-meta"><strong>8 kWp</strong> · 2024</div></div>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:36px;"><a href="/projeler" class="btn-outline">Tüm projeleri gör →</a></div>
+</section>
+
+<!-- HESAPLAMA -->
+<section id="hesaplama" class="calc-section">
+  <div class="section-tag">Ücretsiz Hesaplama</div>
+  <h2>Sisteminizi şimdi hesaplayın</h2>
+  <p class="section-sub">Tahmini üretim, tasarruf ve amortisman sürenizi anında öğrenin.</p>
+  <div class="calc-tabs">
+    <button class="calc-tab active" onclick="switchTab('normal',this)">Normal Sistem (Konut / Ticari)</button>
+    <button class="calc-tab" onclick="switchTab('tarim',this)">Tarımsal Sulama Sistemi</button>
+  </div>
+  <div class="calc-layout">
+    <div>
+      <div class="calc-form" id="form-normal">
+        <div class="form-group"><label>Aylık elektrik faturanız (₺)</label><input type="number" id="fatura" placeholder="Örn: 3500" min="0"></div>
+        <div class="form-group"><label>Kullanım tipi</label><select id="kullanim"><option value="konut">Konut / Villa</option><option value="ticari">Ticari / İşyeri</option><option value="sanayi">Sanayi / Fabrika</option></select></div>
+        <div class="form-group"><label>Şehir / bölge</label><select id="sehir"><option value="antalya">Antalya / Manavgat</option><option value="izmir">İzmir</option><option value="istanbul">İstanbul</option><option value="ankara">Ankara</option><option value="diger">Diğer</option></select></div>
+        <div class="form-group"><label>Çatı alanı (m²) — isteğe bağlı</label><input type="number" id="cati" placeholder="Örn: 80" min="0"></div>
+        <button class="calc-btn" onclick="hesaplaKonut()">Hesapla →</button>
+      </div>
+      <div class="calc-form" id="form-tarim" style="display:none">
+        <div class="form-group"><label>Pompa motor gücü (kW)</label><input type="number" id="pompa" placeholder="Örn: 7.5" min="0" step="0.5"></div>
+        <div class="form-group"><label>Günlük çalışma saati</label><input type="number" id="calisma" placeholder="Örn: 8" min="1" max="14"></div>
+        <div class="form-group"><label>Sulama ayları</label><select id="aylar"><option value="3">3 ay</option><option value="4" selected>4 ay (Yaz sezonu)</option><option value="6">6 ay</option><option value="8">8 ay</option><option value="10">10 ay</option><option value="12">12 ay</option></select></div>
+        <div class="form-group"><label>Sistem tipi</label><select id="sistemtipi"><option value="direkt">Direkt DC (şebeke yok)</option><option value="akulu">Akülü sistem</option><option value="hibrit">Şebeke destekli hibrit</option></select></div>
+        <button class="calc-btn" onclick="hesaplaTarim()">Hesapla →</button>
+      </div>
+    </div>
+    <div class="result-box" id="result-box">
+      <div class="result-empty"><div class="sun">☀️</div><p>Bilgileri doldurun ve hesapla butonuna basın.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- YORUMLAR -->
+<section>
+  <div class="section-tag">Müşteri Yorumları</div>
+  <h2>Müşterilerimiz<br>ne diyor?</h2>
+  <div class="reviews-grid" style="margin-top:48px;">
+    <div class="review-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Güneş enerji sistemini kurduktan sonra elektrik faturamız yarıdan fazla düştü. Hızlı, profesyonel ve sorunsuz bir hizmet aldık. Gespa ekibi her aşamada yanımızdaydı."</p>
+      <div class="reviewer"><div class="avatar">CA</div><div><div class="reviewer-name">Cemil Alagöz</div><div class="reviewer-loc">Manavgat, Antalya</div></div></div>
+    </div>
+    <div class="review-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Seramızın sulama masrafları neredeyse sıfırlandı. Tarımsal sulama sistemi için doğru tercih. Teknik ekip çok bilgiliydi, tüm süreci kolay anlattılar."</p>
+      <div class="reviewer"><div class="avatar">AK</div><div><div class="reviewer-name">Ahmet Karataş</div><div class="reviewer-loc">Serik, Antalya</div></div></div>
+    </div>
+    <div class="review-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Otelimizin enerji giderlerini önemli ölçüde azalttık. Anahtar teslim çalışma anlayışları sayesinde biz hiçbir şeyle uğraşmadık. Kesinlikle tavsiye ederim."</p>
+      <div class="reviewer"><div class="avatar">BA</div><div><div class="reviewer-name">Burcu Aydın</div><div class="reviewer-loc">Muğla</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="iletisim">
+  <div class="section-tag">Ücretsiz Keşif</div>
+  <h2>Bugün arayın,<br>yarın kurulsun</h2>
+  <p>Yerinde ölçüm, tasarım ve maliyet analizi tamamen ücretsiz. Randevu alın, sisteminizi konuşalım.</p>
+  <div class="cta-btns">
+    <a href="tel:+905437434209" class="btn-gold">0543 743 42 09</a>
+    <a href="https://wa.me/905437434209?text=Merhaba%2C%20güneş%20sistemi%20hakkında%20bilgi%20almak%20istiyorum." class="btn-wa"><span class="wa-icon"></span> WhatsApp'tan Yaz</a>
+  </div>
+  <div class="contact-strip">
+    <div><div class="contact-item-label">Telefon</div><div class="contact-item-val">0543 743 42 09</div></div>
+    <div><div class="contact-item-label">E-posta</div><div class="contact-item-val">info@gespaenerji.com</div></div>
+    <div><div class="contact-item-label">Adres</div><div class="contact-item-val">Manavgat / Antalya</div></div>
+    <div><div class="contact-item-label">Çalışma saatleri</div><div class="contact-item-val">Hft. içi 08:30 – 18:00</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="logo">Gespa <span>Enerji</span></a>
+      <p>2005'ten bu yana Antalya ve Manavgat'ta güneş enerji sistemleri tasarım, tedarik ve kurulumu. Gespa Enerji Ltd. Şti.</p>
+      <div class="social-links" style="margin-top:18px;">
+        <a href="https://www.facebook.com/gespaenerji/" class="social-link" target="_blank">f</a>
+        <a href="https://wa.me/905437434209" class="social-link" target="_blank">W</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Hizmetler</h5>
+      <ul>
+        <li><a href="/hizmetler/villa">Villa & Konut</a></li>
+        <li><a href="/hizmetler/tarimsal">Tarımsal Sulama</a></li>
+        <li><a href="/hizmetler/fabrika">Fabrika & Endüstri</a></li>
+        <li><a href="/hizmetler/otel">Otel & Turizm</a></li>
+        <li><a href="/hizmetler/tekne">Tekne & Marine</a></li>
+        <li><a href="/hizmetler/ticari">Ticari & Diğer</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Kurumsal</h5>
+      <ul>
+        <li><a href="/hakkimizda">Hakkımızda</a></li>
+        <li><a href="/projeler">Projeler</a></li>
+        <li><a href="/hesaplama">Hesaplama Aracı</a></li>
+        <li><a href="/iletisim">İletişim</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>İletişim</h5>
+      <ul>
+        <li><a href="tel:+905437434209">0543 743 42 09</a></li>
+        <li><a href="mailto:info@gespaenerji.com">info@gespaenerji.com</a></li>
+        <li><a href="#">Örnek Mah. 1551 Sok. No:10/1</a></li>
+        <li><a href="#">Manavgat / Antalya</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Gespa Enerji Ltd. Şti. — Tüm hakları saklıdır.</span>
+    <span>Tasarım & Geliştirme: Göksoylar İletişim</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/905437434209?text=Merhaba%2C%20güneş%20sistemi%20hakkında%20bilgi%20almak%20istiyorum." class="wa-float" target="_blank"><span class="wa-icon"></span></a>
+
+<script src="/js/main.js"></script>
+<script>
+function switchTab(tab, btn) {
+  document.querySelectorAll('.calc-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('form-normal').style.display = tab==='normal' ? 'flex' : 'none';
+  document.getElementById('form-tarim').style.display = tab==='tarim' ? 'flex' : 'none';
+  document.getElementById('result-box').innerHTML = '<div class="result-empty"><div class="sun">☀️</div><p>Bilgileri doldurun ve hesapla butonuna basın.</p></div>';
+}
+</script>
+</body>
+</html>
